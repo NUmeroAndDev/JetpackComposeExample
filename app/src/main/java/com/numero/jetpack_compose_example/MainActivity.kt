@@ -28,6 +28,10 @@ class MainActivity : AppCompatActivity() {
                     mainAxisSize = LayoutSize.Expand,
                     crossAxisAlignment = CrossAxisAlignment.Start
                 ) {
+                    Button(text = "BottomAppBar", onClick = {
+                        startActivity(BottomAppBarActivity.createIntent(this))
+                    })
+
                     Button(text = "Show List", onClick = {
                         startActivity(ListActivity.createIntent(this))
                     })
