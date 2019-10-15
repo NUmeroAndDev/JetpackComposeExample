@@ -3,10 +3,12 @@ package com.numero.jetpack_compose_example
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.Composable
+import androidx.ui.core.dp
 import androidx.ui.core.setContent
 import androidx.ui.foundation.VerticalScroller
 import androidx.ui.layout.Column
 import androidx.ui.layout.CrossAxisAlignment
+import androidx.ui.layout.HeightSpacer
 import androidx.ui.layout.LayoutSize
 import androidx.ui.material.Button
 import androidx.ui.material.MaterialTheme
@@ -31,11 +33,15 @@ class MainActivity : AppCompatActivity() {
                     Button(text = "BottomAppBar", onClick = {
                         startActivity(BottomAppBarActivity.createIntent(this))
                     })
-
+                    HeightSpacer(16.dp)
                     Button(text = "Button", onClick = {
                         startActivity(ButtonActivity.createIntent(this))
                     })
-
+                    HeightSpacer(16.dp)
+                    Button(text = "ProgressIndicator", onClick = {
+                        startActivity(ProgressIndicatorActivity.createIntent(this))
+                    })
+                    HeightSpacer(16.dp)
                     Button(text = "Show List", onClick = {
                         startActivity(ListActivity.createIntent(this))
                     })
