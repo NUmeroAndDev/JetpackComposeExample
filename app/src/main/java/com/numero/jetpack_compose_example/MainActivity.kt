@@ -38,6 +38,10 @@ class MainActivity : AppCompatActivity() {
                         startActivity(ButtonActivity.createIntent(this))
                     })
                     HeightSpacer(16.dp)
+                    Button(text = "Drawer", onClick = {
+                        startActivity(DrawerActivity.createIntent(this))
+                    })
+                    HeightSpacer(16.dp)
                     Button(text = "ProgressIndicator", onClick = {
                         startActivity(ProgressIndicatorActivity.createIntent(this))
                     })
