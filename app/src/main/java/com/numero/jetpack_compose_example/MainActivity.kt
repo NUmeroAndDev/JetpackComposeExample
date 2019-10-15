@@ -46,8 +46,8 @@ class MainActivity : AppCompatActivity() {
                         startActivity(ProgressIndicatorActivity.createIntent(this))
                     })
                     HeightSpacer(16.dp)
-                    Button(text = "Show List", onClick = {
-                        startActivity(ListActivity.createIntent(this))
+                    Button(text = "List", onClick = {
+                        startActivity(ListItemActivity.createIntent(this))
                     })
                 }
             }

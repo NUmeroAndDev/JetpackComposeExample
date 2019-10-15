@@ -20,6 +20,7 @@
         <activity android:name=".ButtonActivity" />
         <activity android:name=".DrawerActivity" />
         <activity android:name=".ProgressIndicatorActivity" />
+        <activity android:name=".ListItemActivity" />
         <activity android:name=".ListActivity" />
     </application>
 
