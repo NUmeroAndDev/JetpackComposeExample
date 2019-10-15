@@ -3,20 +3,37 @@ package com.numero.jetpack_compose_example
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.Composable
-import androidx.ui.core.Text
 import androidx.ui.core.setContent
+import androidx.ui.foundation.VerticalScroller
+import androidx.ui.layout.Column
+import androidx.ui.layout.CrossAxisAlignment
+import androidx.ui.layout.LayoutSize
+import androidx.ui.material.Button
+import androidx.ui.material.MaterialTheme
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Greeting("World")
+            mainPage()
         }
     }
-}
 
-@Composable
-fun Greeting(name: String) {
-    Text("Hello $name!")
+    @Composable
+    fun mainPage() {
+        MaterialTheme {
+            VerticalScroller {
+                Column(
+                    mainAxisSize = LayoutSize.Expand,
+                    crossAxisAlignment = CrossAxisAlignment.Start
+                ) {
+                    Button(text = "Show List", onClick = {
+                        startActivity(ListActivity.createIntent(this))
+                    })
+                }
+            }
+        }
+
+    }
 }
