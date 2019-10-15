@@ -32,6 +32,10 @@ class MainActivity : AppCompatActivity() {
                         startActivity(BottomAppBarActivity.createIntent(this))
                     })
 
+                    Button(text = "Button", onClick = {
+                        startActivity(ButtonActivity.createIntent(this))
+                    })
+
                     Button(text = "Show List", onClick = {
                         startActivity(ListActivity.createIntent(this))
                     })

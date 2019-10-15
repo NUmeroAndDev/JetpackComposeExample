@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".BottomAppBarActivity" />
+        <activity android:name=".ButtonActivity" />
         <activity android:name=".ListActivity" />
     </application>
 
