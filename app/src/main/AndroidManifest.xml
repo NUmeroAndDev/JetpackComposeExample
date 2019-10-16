@@ -19,6 +19,7 @@
         <activity android:name=".AlertDialogActivity" />
         <activity android:name=".BottomAppBarActivity" />
         <activity android:name=".ButtonActivity" />
+        <activity android:name=".DataTableActivity" />
         <activity android:name=".DrawerActivity" />
         <activity android:name=".ProgressIndicatorActivity" />
         <activity android:name=".ListItemActivity" />

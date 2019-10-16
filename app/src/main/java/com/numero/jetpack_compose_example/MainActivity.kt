@@ -59,6 +59,10 @@ class MainActivity : AppCompatActivity() {
                         startActivity(ButtonActivity.createIntent(this))
                     })
                     HeightSpacer(16.dp)
+                    Button(text = "DataTable", onClick = {
+                        startActivity(DataTableActivity.createIntent(this))
+                    })
+                    HeightSpacer(16.dp)
                     Button(text = "Drawer", onClick = {
                         startActivity(DrawerActivity.createIntent(this))
                     })
