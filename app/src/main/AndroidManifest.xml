@@ -21,6 +21,7 @@
         <activity android:name=".ButtonActivity" />
         <activity android:name=".DataTableActivity" />
         <activity android:name=".DrawerActivity" />
+        <activity android:name=".FloatingActionButtonActivity" />
         <activity android:name=".ProgressIndicatorActivity" />
         <activity android:name=".ListItemActivity" />
         <activity android:name=".ListActivity" />
