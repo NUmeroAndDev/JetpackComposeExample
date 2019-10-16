@@ -10,9 +10,13 @@ import androidx.compose.unaryPlus
 import androidx.ui.core.Text
 import androidx.ui.core.setContent
 import androidx.ui.foundation.VerticalScroller
+import androidx.ui.graphics.imageFromResource
 import androidx.ui.layout.Column
 import androidx.ui.material.AlertDialog
+import androidx.ui.material.AppBarIcon
 import androidx.ui.material.Button
+import androidx.ui.material.TopAppBar
+import com.numero.jetpack_compose_example.core.AppBarLayout
 import com.numero.jetpack_compose_example.core.AppTheme
 
 class AlertDialogActivity : AppCompatActivity() {
@@ -26,41 +30,60 @@ class AlertDialogActivity : AppCompatActivity() {
 
     @Composable
     fun mainPage() {
-        val isShowProgress = +state { false }
         AppTheme {
-            VerticalScroller {
-                Column {
-                    Button(
-                        text = "Show Alert Dialog",
-                        onClick = {
-                            isShowProgress.value = true
+            AppBarLayout(
+                appBar = {
+                    TopAppBar<String>(
+                        title = {
+                            Text("AlertDialog")
+                        },
+                        navigationIcon = {
+                            AppBarIcon(imageFromResource(resources, R.drawable.ic_menu)) {
+                                onBackPressed()
+                            }
                         }
                     )
+                },
+                content = {
+                    content()
                 }
-            }
-            if (isShowProgress.value) {
-                AlertDialog(
-                    onCloseRequest = {
-                        isShowProgress.value = false
-                    },
-                    title = {
-                        Text("Title")
-                    },
-                    text = {
-                        Text("Message")
-                    },
-                    confirmButton = {
-                        Button(
-                            text = "OK",
-                            onClick = {
-                                isShowProgress.value = false
-                            }
-                        )
+            )
+        }
+    }
+
+    private fun content() {
+        val isShowProgress = +state { false }
+        VerticalScroller {
+            Column {
+                Button(
+                    text = "Show Alert Dialog",
+                    onClick = {
+                        isShowProgress.value = true
                     }
                 )
             }
         }
-
+        if (isShowProgress.value) {
+            AlertDialog(
+                onCloseRequest = {
+                    isShowProgress.value = false
+                },
+                title = {
+                    Text("Title")
+                },
+                text = {
+                    Text("Message")
+                },
+                confirmButton = {
+                    Button(
+                        text = "OK",
+                        onClick = {
+                            isShowProgress.value = false
+                        }
+                    )
+                }
+            )
+        }
     }
 
     companion object {

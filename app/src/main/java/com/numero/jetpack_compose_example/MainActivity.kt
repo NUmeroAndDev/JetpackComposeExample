@@ -3,14 +3,16 @@ package com.numero.jetpack_compose_example
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.Composable
+import androidx.ui.core.Text
 import androidx.ui.core.dp
 import androidx.ui.core.setContent
 import androidx.ui.foundation.VerticalScroller
 import androidx.ui.layout.Column
-import androidx.ui.layout.CrossAxisAlignment
 import androidx.ui.layout.HeightSpacer
-import androidx.ui.layout.LayoutSize
+import androidx.ui.layout.Padding
 import androidx.ui.material.Button
+import androidx.ui.material.TopAppBar
+import com.numero.jetpack_compose_example.core.AppBarLayout
 import com.numero.jetpack_compose_example.core.AppTheme
 
 class MainActivity : AppCompatActivity() {
@@ -23,13 +25,28 @@ class MainActivity : AppCompatActivity() {
     }
 
     @Composable
-    fun mainPage() {
+    private fun mainPage() {
         AppTheme {
-            VerticalScroller {
-                Column(
-                    mainAxisSize = LayoutSize.Expand,
-                    crossAxisAlignment = CrossAxisAlignment.Start
-                ) {
+            AppBarLayout(
+                appBar = {
+                    TopAppBar<String>(
+                        title = {
+                            Text("Jetpack Compose Example")
+                        }
+                    )
+                },
+                content = {
+                    content()
+                }
+            )
+        }
+    }
+
+    @Composable
+    private fun content() {
+        VerticalScroller {
+            Padding(left = 16.dp, right = 16.dp) {
+                Column {
                     Button(text = "AlertDialog", onClick = {
                         startActivity(AlertDialogActivity.createIntent(this))
                     })
@@ -56,6 +73,5 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-
     }
 }

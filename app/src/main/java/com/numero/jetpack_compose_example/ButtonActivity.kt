@@ -5,15 +5,15 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.Composable
 import androidx.compose.Context
+import androidx.ui.core.Text
 import androidx.ui.core.dp
 import androidx.ui.core.setContent
 import androidx.ui.foundation.VerticalScroller
+import androidx.ui.graphics.imageFromResource
 import androidx.ui.layout.Column
 import androidx.ui.layout.HeightSpacer
-import androidx.ui.material.Button
-import androidx.ui.material.ContainedButtonStyle
-import androidx.ui.material.OutlinedButtonStyle
-import androidx.ui.material.TextButtonStyle
+import androidx.ui.material.*
+import com.numero.jetpack_compose_example.core.AppBarLayout
 import com.numero.jetpack_compose_example.core.AppTheme
 
 class ButtonActivity : AppCompatActivity() {
@@ -28,32 +28,52 @@ class ButtonActivity : AppCompatActivity() {
     @Composable
     fun mainPage() {
         AppTheme {
-            VerticalScroller {
-                Column {
-                    Button(
-                        text = "ContainedButton",
-                        onClick = {
+            AppBarLayout(
+                appBar = {
+                    TopAppBar<String>(
+                        title = {
+                            Text("Button")
                         },
-                        style = ContainedButtonStyle()
+                        navigationIcon = {
+                            AppBarIcon(imageFromResource(resources, R.drawable.ic_menu)) {
+                                onBackPressed()
+                            }
+                        }
                     )
-                    HeightSpacer(32.dp)
-                    Button(
-                        text = "OutlinedButton",
-                        onClick = {
-                        },
-                        style = OutlinedButtonStyle()
-                    )
-                    HeightSpacer(32.dp)
-                    Button(
-                        text = "TextButton",
-                        onClick = {
-                        },
-                        style = TextButtonStyle()
-                    )
+                },
+                content = {
+                    content()
                 }
+            )
+        }
+    }
+
+    @Composable
+    private fun content() {
+        VerticalScroller {
+            Column {
+                Button(
+                    text = "ContainedButton",
+                    onClick = {
+                    },
+                    style = ContainedButtonStyle()
+                )
+                HeightSpacer(32.dp)
+                Button(
+                    text = "OutlinedButton",
+                    onClick = {
+                    },
+                    style = OutlinedButtonStyle()
+                )
+                HeightSpacer(32.dp)
+                Button(
+                    text = "TextButton",
+                    onClick = {
+                    },
+                    style = TextButtonStyle()
+                )
             }
         }
-
     }
 
     companion object {
