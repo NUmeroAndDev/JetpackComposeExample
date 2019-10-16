@@ -57,7 +57,7 @@ class DrawerActivity : AppCompatActivity() {
                         Text("Drawer")
                     },
                     navigationIcon = {
-                        AppBarIcon(imageFromResource(resources, R.drawable.ic_menu)) {
+                        AppBarIcon(imageFromResource(resources, R.drawable.ic_arrow_back)) {
                             onBackPressed()
                         }
                     }

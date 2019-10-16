@@ -38,7 +38,7 @@ class AlertDialogActivity : AppCompatActivity() {
                             Text("AlertDialog")
                         },
                         navigationIcon = {
-                            AppBarIcon(imageFromResource(resources, R.drawable.ic_menu)) {
+                            AppBarIcon(imageFromResource(resources, R.drawable.ic_arrow_back)) {
                                 onBackPressed()
                             }
                         }

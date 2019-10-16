@@ -38,7 +38,7 @@ class ListItemActivity : AppCompatActivity() {
                             Text("List")
                         },
                         navigationIcon = {
-                            AppBarIcon(imageFromResource(resources, R.drawable.ic_menu)) {
+                            AppBarIcon(imageFromResource(resources, R.drawable.ic_arrow_back)) {
                                 onBackPressed()
                             }
                         }
