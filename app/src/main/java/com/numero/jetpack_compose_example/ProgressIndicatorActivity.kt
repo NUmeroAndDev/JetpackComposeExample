@@ -8,8 +8,11 @@ import androidx.compose.Context
 import androidx.ui.core.dp
 import androidx.ui.core.setContent
 import androidx.ui.foundation.VerticalScroller
-import androidx.ui.layout.*
-import androidx.ui.material.*
+import androidx.ui.layout.Column
+import androidx.ui.layout.HeightSpacer
+import androidx.ui.material.CircularProgressIndicator
+import androidx.ui.material.LinearProgressIndicator
+import com.numero.jetpack_compose_example.core.AppTheme
 
 class ProgressIndicatorActivity : AppCompatActivity() {
 
@@ -22,7 +25,7 @@ class ProgressIndicatorActivity : AppCompatActivity() {
 
     @Composable
     fun mainPage() {
-        MaterialTheme {
+        AppTheme {
             VerticalScroller {
                 Column {
                     CircularProgressIndicator()

@@ -12,7 +12,7 @@ import androidx.ui.graphics.Color
 import androidx.ui.layout.Column
 import androidx.ui.material.Divider
 import androidx.ui.material.ListItem
-import androidx.ui.material.MaterialTheme
+import com.numero.jetpack_compose_example.core.AppTheme
 
 class ListItemActivity : AppCompatActivity() {
 
@@ -25,7 +25,7 @@ class ListItemActivity : AppCompatActivity() {
 
     @Composable
     private fun createListCompose() {
-        MaterialTheme {
+        AppTheme {
             VerticalScroller {
                 Column {
                     (0..5).forEachIndexed { index, _ ->

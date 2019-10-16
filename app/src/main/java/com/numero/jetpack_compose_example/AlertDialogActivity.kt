@@ -13,7 +13,7 @@ import androidx.ui.foundation.VerticalScroller
 import androidx.ui.layout.Column
 import androidx.ui.material.AlertDialog
 import androidx.ui.material.Button
-import androidx.ui.material.MaterialTheme
+import com.numero.jetpack_compose_example.core.AppTheme
 
 class AlertDialogActivity : AppCompatActivity() {
 
@@ -27,7 +27,7 @@ class AlertDialogActivity : AppCompatActivity() {
     @Composable
     fun mainPage() {
         val isShowProgress = +state { false }
-        MaterialTheme {
+        AppTheme {
             VerticalScroller {
                 Column {
                     Button(

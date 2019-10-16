@@ -11,7 +11,7 @@ import androidx.ui.layout.CrossAxisAlignment
 import androidx.ui.layout.HeightSpacer
 import androidx.ui.layout.LayoutSize
 import androidx.ui.material.Button
-import androidx.ui.material.MaterialTheme
+import com.numero.jetpack_compose_example.core.AppTheme
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
     @Composable
     fun mainPage() {
-        MaterialTheme {
+        AppTheme {
             VerticalScroller {
                 Column(
                     mainAxisSize = LayoutSize.Expand,

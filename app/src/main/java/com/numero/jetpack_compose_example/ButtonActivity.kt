@@ -8,8 +8,13 @@ import androidx.compose.Context
 import androidx.ui.core.dp
 import androidx.ui.core.setContent
 import androidx.ui.foundation.VerticalScroller
-import androidx.ui.layout.*
-import androidx.ui.material.*
+import androidx.ui.layout.Column
+import androidx.ui.layout.HeightSpacer
+import androidx.ui.material.Button
+import androidx.ui.material.ContainedButtonStyle
+import androidx.ui.material.OutlinedButtonStyle
+import androidx.ui.material.TextButtonStyle
+import com.numero.jetpack_compose_example.core.AppTheme
 
 class ButtonActivity : AppCompatActivity() {
 
@@ -22,7 +27,7 @@ class ButtonActivity : AppCompatActivity() {
 
     @Composable
     fun mainPage() {
-        MaterialTheme {
+        AppTheme {
             VerticalScroller {
                 Column {
                     Button(

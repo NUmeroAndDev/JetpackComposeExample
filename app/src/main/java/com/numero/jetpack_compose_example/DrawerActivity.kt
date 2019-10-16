@@ -8,7 +8,10 @@ import androidx.ui.core.Text
 import androidx.ui.core.setContent
 import androidx.ui.layout.Center
 import androidx.ui.layout.Column
-import androidx.ui.material.*
+import androidx.ui.material.Button
+import androidx.ui.material.DrawerState
+import androidx.ui.material.ModalDrawerLayout
+import com.numero.jetpack_compose_example.core.AppTheme
 
 class DrawerActivity : AppCompatActivity() {
 
@@ -22,7 +25,7 @@ class DrawerActivity : AppCompatActivity() {
     @Composable
     fun mainPage() {
         val state = +state { DrawerState.Closed }
-        MaterialTheme {
+        AppTheme {
             ModalDrawerLayout(
                 drawerState = state.value,
                 onStateChange = {

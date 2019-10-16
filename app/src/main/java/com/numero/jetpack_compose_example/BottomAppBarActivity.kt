@@ -13,7 +13,11 @@ import androidx.ui.foundation.VerticalScroller
 import androidx.ui.foundation.shape.corner.CutCornerShape
 import androidx.ui.graphics.imageFromResource
 import androidx.ui.layout.FlexColumn
-import androidx.ui.material.*
+import androidx.ui.material.AppBarIcon
+import androidx.ui.material.BottomAppBar
+import androidx.ui.material.FloatingActionButton
+import androidx.ui.material.themeColor
+import com.numero.jetpack_compose_example.core.AppTheme
 
 class BottomAppBarActivity : AppCompatActivity() {
 
@@ -27,7 +31,7 @@ class BottomAppBarActivity : AppCompatActivity() {
     @Composable
     fun mainPage() {
         val menu = listOf("Hoge", "Fuga")
-        MaterialTheme {
+        AppTheme {
             FlexColumn {
                 expanded(1.0F) {
                     VerticalScroller {
