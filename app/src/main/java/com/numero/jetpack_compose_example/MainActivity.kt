@@ -30,6 +30,10 @@ class MainActivity : AppCompatActivity() {
                     mainAxisSize = LayoutSize.Expand,
                     crossAxisAlignment = CrossAxisAlignment.Start
                 ) {
+                    Button(text = "AlertDialog", onClick = {
+                        startActivity(AlertDialogActivity.createIntent(this))
+                    })
+                    HeightSpacer(16.dp)
                     Button(text = "BottomAppBar", onClick = {
                         startActivity(BottomAppBarActivity.createIntent(this))
                     })
