@@ -16,6 +16,7 @@ import androidx.ui.graphics.imageFromResource
 import androidx.ui.layout.Column
 import androidx.ui.layout.Padding
 import androidx.ui.material.*
+import androidx.ui.text.TextStyle
 import com.numero.jetpack_compose_example.core.AppBarLayout
 import com.numero.jetpack_compose_example.core.AppTheme
 
@@ -58,7 +59,12 @@ class DataTableActivity : AppCompatActivity() {
                     rows = createRows(),
                     columns = 20,
                     header = {
-                        Text("Header $it")
+                        Text(
+                            text = "Header $it",
+                            style = TextStyle(
+                                color = +themeColor { onBackground }
+                            )
+                        )
                     }
                 )
             }
@@ -71,7 +77,12 @@ class DataTableActivity : AppCompatActivity() {
             DataRow(
                 children = {
                     Padding(padding = 8.dp) {
-                        Text("Row $rowIndex Col $it")
+                        Text(
+                            text = "Row $rowIndex Col $it",
+                            style = TextStyle(
+                                color = +themeColor { onBackground }
+                            )
+                        )
                     }
                 }
             )

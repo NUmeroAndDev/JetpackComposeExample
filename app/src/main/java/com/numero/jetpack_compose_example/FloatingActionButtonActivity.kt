@@ -19,6 +19,7 @@ import androidx.ui.material.FloatingActionButton
 import androidx.ui.material.TopAppBar
 import androidx.ui.material.themeColor
 import androidx.ui.res.stringResource
+import androidx.ui.text.TextStyle
 import com.numero.jetpack_compose_example.core.AppBarLayout
 import com.numero.jetpack_compose_example.core.AppTheme
 
@@ -61,7 +62,12 @@ class FloatingActionButtonActivity : AppCompatActivity() {
             expanded {
                 VerticalScroller {
                     Padding(16.dp) {
-                        Text(longText)
+                        Text(
+                            text = longText,
+                            style = TextStyle(
+                                color = +themeColor { onBackground }
+                            )
+                        )
                     }
                 }
             }

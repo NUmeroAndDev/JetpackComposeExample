@@ -3,9 +3,13 @@ package com.numero.jetpack_compose_example.core
 import androidx.compose.Composable
 import androidx.compose.unaryPlus
 import androidx.ui.foundation.isSystemInDarkTheme
+import androidx.ui.foundation.shape.DrawShape
+import androidx.ui.foundation.shape.RectangleShape
 import androidx.ui.graphics.Color
+import androidx.ui.layout.Stack
 import androidx.ui.material.MaterialColors
 import androidx.ui.material.MaterialTheme
+import androidx.ui.material.themeColor
 
 @Composable
 fun AppTheme(
@@ -14,7 +18,23 @@ fun AppTheme(
     val isDarkTheme = +isSystemInDarkTheme()
     MaterialTheme(
         colors = if (isDarkTheme) darkThemeColor else lightThemeColor,
-        children = children
+        children = {
+            /**
+             * FIXME
+             * If supported background color, remove this code.
+             */
+            Stack {
+                expanded {
+                    DrawShape(
+                        shape = RectangleShape,
+                        color = +themeColor { background }
+                    )
+                }
+                expanded {
+                    children()
+                }
+            }
+        }
     )
 }
 
