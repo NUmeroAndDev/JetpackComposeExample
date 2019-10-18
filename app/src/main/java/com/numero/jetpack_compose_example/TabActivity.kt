@@ -14,7 +14,6 @@ import androidx.ui.foundation.VerticalScroller
 import androidx.ui.graphics.imageFromResource
 import androidx.ui.layout.Padding
 import androidx.ui.material.*
-import androidx.ui.res.stringResource
 import androidx.ui.text.TextStyle
 import com.numero.jetpack_compose_example.core.AppBarLayout
 import com.numero.jetpack_compose_example.core.AppTheme
@@ -30,6 +29,8 @@ class TabActivity : AppCompatActivity() {
 
     @Composable
     fun mainPage() {
+        val tabList = listOf(TabItem.TAB1, TabItem.TAB2, TabItem.TAB3)
+        val viewModel = TabViewModel(tabList.first())
         AppTheme {
             AppBarLayout(
                 appBar = {
@@ -43,43 +44,31 @@ class TabActivity : AppCompatActivity() {
                             }
                         }
                     )
-                    tab()
+                    setupTab(viewModel, tabList)
                 },
                 content = {
-                    content()
+                    content(viewModel)
                 }
             )
         }
     }
 
     @Composable
-    private fun content() {
-        val longText = +stringResource(R.string.large_text)
-        VerticalScroller {
-            Padding(16.dp) {
-                Text(
-                    text = longText,
-                    style = TextStyle(
-                        color = +themeColor { onBackground }
-                    )
-                )
-            }
-        }
+    private fun content(viewModel: TabViewModel) {
+        viewModel.selectedTabItem.contentScreen()
     }
 
     @Composable
-    private fun tab() {
-        val tabList = listOf(TabItem.TAB1, TabItem.TAB2, TabItem.TAB3)
-        val selectedTabItem = +state { tabList.first() }
+    private fun setupTab(viewModel: TabViewModel, tabItemList: List<TabItem>) {
         TabRow(
-            items = tabList,
-            selectedIndex = tabList.indexOf(selectedTabItem.value),
+            items = tabItemList,
+            selectedIndex = tabItemList.indexOf(viewModel.selectedTabItem),
             tab = { index, tabItem ->
                 Tab(
                     text = tabItem.label,
-                    selected = tabItem == selectedTabItem.value,
+                    selected = tabItem == viewModel.selectedTabItem,
                     onSelected = {
-                        selectedTabItem.value = tabItem
+                        viewModel.selectedTabItem = tabItem
                     }
                 )
             }
@@ -90,6 +79,52 @@ class TabActivity : AppCompatActivity() {
         TAB1("Tab1"),
         TAB2("Tab2"),
         TAB3("Tab3")
+    }
+
+    @Composable
+    private fun TabItem.contentScreen() {
+        when (this) {
+            TabItem.TAB1 -> {
+                VerticalScroller {
+                    Padding(16.dp) {
+                        Text(
+                            text = label,
+                            style = TextStyle(
+                                color = +themeColor { onBackground }
+                            )
+                        )
+                    }
+                }
+            }
+            TabItem.TAB2 -> {
+                VerticalScroller {
+                    Padding(16.dp) {
+                        Text(
+                            text = label,
+                            style = TextStyle(
+                                color = +themeColor { onBackground }
+                            )
+                        )
+                    }
+                }
+            }
+            TabItem.TAB3 -> {
+                VerticalScroller {
+                    Padding(16.dp) {
+                        Text(
+                            text = label,
+                            style = TextStyle(
+                                color = +themeColor { onBackground }
+                            )
+                        )
+                    }
+                }
+            }
+        }
+    }
+
+    private class TabViewModel(firstTabItem: TabItem) {
+        var selectedTabItem by +state { firstTabItem }
     }
 
     companion object {
