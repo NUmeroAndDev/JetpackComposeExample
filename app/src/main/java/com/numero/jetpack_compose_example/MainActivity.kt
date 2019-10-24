@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
                     })
                     HeightSpacer(16.dp)
                     Button(text = "Tab", onClick = {
-                        startActivity(TabActivity.createIntent(this))
+                        startActivity(TabActivity.createIntent(this@MainActivity))
                     })
                 }
             }
