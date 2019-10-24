@@ -52,7 +52,7 @@ class DrawerActivity : AppCompatActivity() {
     private fun bodyContent(state: State<DrawerState>) {
         AppBarLayout(
             appBar = {
-                TopAppBar<String>(
+                TopAppBar(
                     title = {
                         Text("Drawer")
                     },

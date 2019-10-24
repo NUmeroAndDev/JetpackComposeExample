@@ -33,7 +33,7 @@ class AlertDialogActivity : AppCompatActivity() {
         AppTheme {
             AppBarLayout(
                 appBar = {
-                    TopAppBar<String>(
+                    TopAppBar(
                         title = {
                             Text("AlertDialog")
                         },

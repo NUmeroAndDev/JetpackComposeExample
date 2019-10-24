@@ -34,7 +34,7 @@ class DataTableActivity : AppCompatActivity() {
         AppTheme {
             AppBarLayout(
                 appBar = {
-                    TopAppBar<String>(
+                    TopAppBar(
                         title = {
                             Text("DataTable")
                         },
@@ -56,9 +56,9 @@ class DataTableActivity : AppCompatActivity() {
         VerticalScroller {
             HorizontalScroller {
                 DataTable(
-                    rows = createRows(),
-                    columns = 20,
-                    header = {
+                    columns = 20
+                ) {
+                    headerRow {
                         Text(
                             text = "Header $it",
                             style = TextStyle(
@@ -66,26 +66,20 @@ class DataTableActivity : AppCompatActivity() {
                             )
                         )
                     }
-                )
-            }
-        }
-    }
-
-    @Composable
-    private fun createRows(): List<DataRow> {
-        return (0..30).map { rowIndex ->
-            DataRow(
-                children = {
-                    Padding(padding = 8.dp) {
-                        Text(
-                            text = "Row $rowIndex Col $it",
-                            style = TextStyle(
-                                color = +themeColor { onBackground }
-                            )
-                        )
+                    (0..30).map { rowIndex ->
+                        dataRow {
+                            Padding(padding = 8.dp) {
+                                Text(
+                                    text = "Row $rowIndex Col $it",
+                                    style = TextStyle(
+                                        color = +themeColor { onBackground }
+                                    )
+                                )
+                            }
+                        }
                     }
                 }
-            )
+            }
         }
     }
 

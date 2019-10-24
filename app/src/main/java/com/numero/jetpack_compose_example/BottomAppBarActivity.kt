@@ -39,7 +39,7 @@ class BottomAppBarActivity : AppCompatActivity() {
                     }
                 }
                 inflexible {
-                    BottomAppBar<String>(
+                    BottomAppBar(
                         navigationIcon = {
                             AppBarIcon(
                                 imageFromResource(
@@ -65,7 +65,7 @@ class BottomAppBarActivity : AppCompatActivity() {
                                 }
                             )
                         },
-                        contextualActions = menu,
+                        actionData = menu,
                         action = {
 
                         }

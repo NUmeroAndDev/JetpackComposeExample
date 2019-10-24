@@ -30,7 +30,7 @@ class ButtonActivity : AppCompatActivity() {
         AppTheme {
             AppBarLayout(
                 appBar = {
-                    TopAppBar<String>(
+                    TopAppBar(
                         title = {
                             Text("Button")
                         },

@@ -33,7 +33,7 @@ class ListItemActivity : AppCompatActivity() {
         AppTheme {
             AppBarLayout(
                 appBar = {
-                    TopAppBar<String>(
+                    TopAppBar(
                         title = {
                             Text("List")
                         },

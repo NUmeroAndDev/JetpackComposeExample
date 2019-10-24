@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         AppTheme {
             AppBarLayout(
                 appBar = {
-                    TopAppBar<String>(
+                    TopAppBar(
                         title = {
                             Text("Jetpack Compose Example")
                         }
@@ -48,35 +48,35 @@ class MainActivity : AppCompatActivity() {
             Padding(left = 16.dp, right = 16.dp) {
                 Column {
                     Button(text = "AlertDialog", onClick = {
-                        startActivity(AlertDialogActivity.createIntent(this))
+                        startActivity(AlertDialogActivity.createIntent(this@MainActivity))
                     })
                     HeightSpacer(16.dp)
                     Button(text = "BottomAppBar", onClick = {
-                        startActivity(BottomAppBarActivity.createIntent(this))
+                        startActivity(BottomAppBarActivity.createIntent(this@MainActivity))
                     })
                     HeightSpacer(16.dp)
                     Button(text = "Button", onClick = {
-                        startActivity(ButtonActivity.createIntent(this))
+                        startActivity(ButtonActivity.createIntent(this@MainActivity))
                     })
                     HeightSpacer(16.dp)
                     Button(text = "DataTable", onClick = {
-                        startActivity(DataTableActivity.createIntent(this))
+                        startActivity(DataTableActivity.createIntent(this@MainActivity))
                     })
                     HeightSpacer(16.dp)
                     Button(text = "Drawer", onClick = {
-                        startActivity(DrawerActivity.createIntent(this))
+                        startActivity(DrawerActivity.createIntent(this@MainActivity))
                     })
                     HeightSpacer(16.dp)
                     Button(text = "FloatingActionButton", onClick = {
-                        startActivity(FloatingActionButtonActivity.createIntent(this))
+                        startActivity(FloatingActionButtonActivity.createIntent(this@MainActivity))
                     })
                     HeightSpacer(16.dp)
                     Button(text = "ProgressIndicator", onClick = {
-                        startActivity(ProgressIndicatorActivity.createIntent(this))
+                        startActivity(ProgressIndicatorActivity.createIntent(this@MainActivity))
                     })
                     HeightSpacer(16.dp)
                     Button(text = "List", onClick = {
-                        startActivity(ListItemActivity.createIntent(this))
+                        startActivity(ListItemActivity.createIntent(this@MainActivity))
                     })
                 }
             }
