@@ -78,6 +78,10 @@ class MainActivity : AppCompatActivity() {
                     Button(text = "List", onClick = {
                         startActivity(ListItemActivity.createIntent(this@MainActivity))
                     })
+                    HeightSpacer(16.dp)
+                    Button(text = "Tab", onClick = {
+                        startActivity(TabActivity.createIntent(this))
+                    })
                 }
             }
         }

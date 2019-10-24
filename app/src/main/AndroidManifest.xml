@@ -25,6 +25,7 @@
         <activity android:name=".ProgressIndicatorActivity" />
         <activity android:name=".ListItemActivity" />
         <activity android:name=".ListActivity" />
+        <activity android:name=".TabActivity" />
     </application>
 
 </manifest>
