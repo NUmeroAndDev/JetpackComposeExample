@@ -14,10 +14,7 @@ import androidx.ui.foundation.VerticalScroller
 import androidx.ui.graphics.imageFromResource
 import androidx.ui.layout.Padding
 import androidx.ui.layout.Stack
-import androidx.ui.material.AppBarIcon
-import androidx.ui.material.FloatingActionButton
-import androidx.ui.material.TopAppBar
-import androidx.ui.material.themeColor
+import androidx.ui.material.*
 import androidx.ui.res.stringResource
 import androidx.ui.text.TextStyle
 import com.numero.jetpack_compose_example.core.AppBarLayout
@@ -65,7 +62,7 @@ class FloatingActionButtonActivity : AppCompatActivity() {
                         Text(
                             text = longText,
                             style = TextStyle(
-                                color = +themeColor { onBackground }
+                                color = (+MaterialTheme.colors()).onBackground
                             )
                         )
                     }
@@ -75,7 +72,7 @@ class FloatingActionButtonActivity : AppCompatActivity() {
                 Padding(16.dp) {
                     FloatingActionButton(
                         icon = imageFromResource(resources, R.drawable.ic_add),
-                        color = +themeColor { secondary },
+                        color = (+MaterialTheme.colors()).secondary,
                         onClick = {
                             // TODO click action
                         }

@@ -90,7 +90,7 @@ class TabActivity : AppCompatActivity() {
                         Text(
                             text = label,
                             style = TextStyle(
-                                color = +themeColor { onBackground }
+                                color = (+MaterialTheme.colors()).onBackground
                             )
                         )
                     }
@@ -102,7 +102,7 @@ class TabActivity : AppCompatActivity() {
                         Text(
                             text = label,
                             style = TextStyle(
-                                color = +themeColor { onBackground }
+                                color = (+MaterialTheme.colors()).onBackground
                             )
                         )
                     }
@@ -114,7 +114,7 @@ class TabActivity : AppCompatActivity() {
                         Text(
                             text = label,
                             style = TextStyle(
-                                color = +themeColor { onBackground }
+                                color = (+MaterialTheme.colors()).onBackground
                             )
                         )
                     }

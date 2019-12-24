@@ -62,7 +62,7 @@ class DataTableActivity : AppCompatActivity() {
                         Text(
                             text = "Header $it",
                             style = TextStyle(
-                                color = +themeColor { onBackground }
+                                color = (+MaterialTheme.colors()).onBackground
                             )
                         )
                     }
@@ -72,7 +72,7 @@ class DataTableActivity : AppCompatActivity() {
                                 Text(
                                     text = "Row $rowIndex Col $it",
                                     style = TextStyle(
-                                        color = +themeColor { onBackground }
+                                        color = (+MaterialTheme.colors()).onBackground
                                     )
                                 )
                             }
