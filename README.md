@@ -5,4 +5,4 @@
 
 
 ### Env
-- Android Studio 4.0 Canary4
+- Android Studio 4.0 Canary7
