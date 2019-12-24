@@ -13,10 +13,7 @@ import androidx.ui.foundation.VerticalScroller
 import androidx.ui.foundation.shape.corner.CutCornerShape
 import androidx.ui.graphics.imageFromResource
 import androidx.ui.layout.FlexColumn
-import androidx.ui.material.AppBarIcon
-import androidx.ui.material.BottomAppBar
-import androidx.ui.material.FloatingActionButton
-import androidx.ui.material.themeColor
+import androidx.ui.material.*
 import com.numero.jetpack_compose_example.core.AppTheme
 
 class BottomAppBarActivity : AppCompatActivity() {
@@ -59,7 +56,7 @@ class BottomAppBarActivity : AppCompatActivity() {
                                     R.drawable.ic_add
                                 ),
                                 shape = CutCornerShape(28.dp),
-                                color = +themeColor { secondary },
+                                color = (+MaterialTheme.colors()).secondary,
                                 onClick = {
 
                                 }

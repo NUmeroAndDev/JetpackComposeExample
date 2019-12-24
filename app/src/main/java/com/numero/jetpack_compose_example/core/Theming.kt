@@ -7,9 +7,8 @@ import androidx.ui.foundation.shape.DrawShape
 import androidx.ui.foundation.shape.RectangleShape
 import androidx.ui.graphics.Color
 import androidx.ui.layout.Stack
-import androidx.ui.material.MaterialColors
+import androidx.ui.material.ColorPalette
 import androidx.ui.material.MaterialTheme
-import androidx.ui.material.themeColor
 
 @Composable
 fun AppTheme(
@@ -27,7 +26,7 @@ fun AppTheme(
                 expanded {
                     DrawShape(
                         shape = RectangleShape,
-                        color = +themeColor { background }
+                        color = (+MaterialTheme.colors()).background
                     )
                 }
                 expanded {
@@ -38,7 +37,7 @@ fun AppTheme(
     )
 }
 
-val lightThemeColor = MaterialColors(
+val lightThemeColor = ColorPalette(
     primary = Color("#6200EE"),
     primaryVariant = Color("#3700B3"),
     secondary = Color("#03DAD6"),
@@ -53,7 +52,7 @@ val lightThemeColor = MaterialColors(
     onError = Color("#FFFFFF")
 )
 
-val darkThemeColor = MaterialColors(
+val darkThemeColor = ColorPalette(
     primary = Color("#BB86FC"),
     primaryVariant = Color("#3700B3"),
     secondary = Color("#03DAD6"),
