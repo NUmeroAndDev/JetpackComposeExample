@@ -23,12 +23,14 @@ fun ComponentDetailScreen(component: Component) {
                         id = R.drawable.ic_arrow_back,
                         tint = (+MaterialTheme.colors()).onPrimary
                     ) {
-                        // TODO back press
+                        // TODO implement back press
+                        navigateTo(Screen.Home)
                     }
                 }
             )
         },
         content = {
+            Text(text = "Hello world")
             // TODO show component detail
         }
     )

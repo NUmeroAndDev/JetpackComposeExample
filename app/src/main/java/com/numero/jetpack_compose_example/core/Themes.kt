@@ -14,8 +14,6 @@ fun AppTheme(
     MaterialTheme(
         colors = if (isDarkTheme) darkThemeColor else lightThemeColor
     ) {
-        Surface(color = (+MaterialTheme.colors()).background) {
-            children()
-        }
+        children()
     }
 }
