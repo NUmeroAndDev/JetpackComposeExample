@@ -34,7 +34,7 @@ fun ComponentDetailScreen(component: Component) {
         content = {
             when (component) {
                 Component.AlertDialog -> AlertDialogScreen()
-                Component.BottomAppBar -> TODO()
+                Component.BottomAppBar -> BottomAppbarScreen()
                 Component.Button -> TODO()
                 Component.DataTable -> TODO()
                 Component.Drawer -> TODO()
