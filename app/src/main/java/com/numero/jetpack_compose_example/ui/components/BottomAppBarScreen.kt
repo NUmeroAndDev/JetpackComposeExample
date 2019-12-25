@@ -7,56 +7,99 @@ import androidx.ui.core.Text
 import androidx.ui.core.dp
 import androidx.ui.foundation.VerticalScroller
 import androidx.ui.foundation.shape.corner.CutCornerShape
-import androidx.ui.layout.Center
-import androidx.ui.layout.FlexColumn
+import androidx.ui.layout.Column
+import androidx.ui.layout.Padding
 import androidx.ui.material.*
+import androidx.ui.res.stringResource
+import androidx.ui.text.TextStyle
 import com.numero.jetpack_compose_example.R
-import com.numero.jetpack_compose_example.core.AppTheme
 import com.numero.jetpack_compose_example.core.VectorImage
 import com.numero.jetpack_compose_example.core.VectorImageButton
 
 @Composable
 fun BottomAppbarScreen() {
-    val menu = listOf("Hoge", "Fuga")
-    AppTheme {
-        FlexColumn {
-            expanded(1.0F) {
-                VerticalScroller {
-                    Text("Text")
+    var state by +state { DrawerState.Closed }
+    BottomDrawerLayout(
+            drawerState = state,
+            onStateChange = {
+                if (state != it) {
+                    state = it
+                }
+            },
+            gesturesEnabled = false,
+            drawerContent = {
+                BottomDrawerContent()
+            },
+            bodyContent = {
+                BottomAppbarBodyContent {
+                    state = DrawerState.Opened
                 }
             }
-            inflexible {
-                BottomAppBar(
-                    navigationIcon = {
-                        VectorImageButton(
+    )
+}
+
+@Composable
+private fun BottomAppbarBodyContent(openDrawer: () -> Unit) {
+    val menu = listOf("Hoge", "Fuga")
+    Column {
+        VerticalScroller(modifier = Flexible(1f)) {
+            BodyContent()
+        }
+        BottomAppBar(
+                navigationIcon = {
+                    VectorImageButton(
                             id = R.drawable.ic_menu,
                             tint = (+MaterialTheme.colors()).onPrimary
-                        ) {
-                            // TODO click navigation
-                        }
-                    },
-                    fabConfiguration = BottomAppBar.FabConfiguration(
-                        cutoutShape = CutCornerShape(36.dp)
                     ) {
-                        FloatingActionButton(
+                        openDrawer()
+                    }
+                },
+                fabConfiguration = BottomAppBar.FabConfiguration(
+                        cutoutShape = CutCornerShape(36.dp)
+                ) {
+                    FloatingActionButton(
                             shape = CutCornerShape(28.dp),
                             color = (+MaterialTheme.colors()).secondary,
                             onClick = {
                                 // TODO click fab
                             }
-                        ) {
-                            VectorImage(
+                    ) {
+                        VectorImage(
                                 id = R.drawable.ic_add,
                                 tint = (+MaterialTheme.colors()).onSecondary
-                            )
-                        }
-                    },
-                    actionData = menu,
-                    action = {
-
+                        )
                     }
-                )
-            }
+                },
+                actionData = menu,
+                action = {
+
+                }
+        )
+    }
+}
+
+@Composable
+private fun BodyContent() {
+    val longText = +stringResource(R.string.large_text)
+    val color = (+MaterialTheme.colors())
+    val typo = (+MaterialTheme.typography())
+    VerticalScroller {
+        Padding(
+                left = 16.dp,
+                top = 16.dp,
+                right = 16.dp
+        ) {
+            Text(
+                    text = longText,
+                    style = typo.body2.merge(
+                            TextStyle(color = color.onBackground)
+                    )
+            )
         }
     }
+}
+
+@Composable
+private fun BottomDrawerContent() {
+    Text("Drawer")
 }
