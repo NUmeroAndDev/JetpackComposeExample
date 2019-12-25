@@ -35,7 +35,7 @@ fun ComponentDetailScreen(component: Component) {
             when (component) {
                 Component.AlertDialog -> AlertDialogScreen()
                 Component.BottomAppBar -> BottomAppbarScreen()
-                Component.Button -> TODO()
+                Component.Button -> ButtonScreen()
                 Component.DataTable -> TODO()
                 Component.Drawer -> TODO()
                 Component.FloatingActionButton -> TODO()
