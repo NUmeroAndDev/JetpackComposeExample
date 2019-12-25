@@ -1,4 +1,4 @@
-package com.numero.jetpack_compose_example.ui
+package com.numero.jetpack_compose_example.ui.components
 
 import androidx.compose.Composable
 import androidx.compose.unaryPlus
@@ -9,6 +9,8 @@ import com.numero.jetpack_compose_example.R
 import com.numero.jetpack_compose_example.core.AppBarLayout
 import com.numero.jetpack_compose_example.core.VectorImageButton
 import com.numero.jetpack_compose_example.model.Component
+import com.numero.jetpack_compose_example.ui.Screen
+import com.numero.jetpack_compose_example.ui.navigateTo
 
 @Composable
 fun ComponentDetailScreen(component: Component) {
@@ -24,7 +26,9 @@ fun ComponentDetailScreen(component: Component) {
                         tint = (+MaterialTheme.colors()).onPrimary
                     ) {
                         // TODO implement back press
-                        navigateTo(Screen.Home)
+                        navigateTo(
+                            Screen.Home
+                        )
                     }
                 }
             )
