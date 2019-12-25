@@ -8,6 +8,7 @@ enum class Component(val label: String) {
     Drawer("Drawer"),
     FloatingActionButton("FloatingActionButton"),
     ProgressIndicator("ProgressIndicator"),
+    Slider("Slider"),
     List("List"),
     Tab("Tab")
 }
