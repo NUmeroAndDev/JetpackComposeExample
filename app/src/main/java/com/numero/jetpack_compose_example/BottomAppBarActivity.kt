@@ -15,6 +15,7 @@ import androidx.ui.graphics.imageFromResource
 import androidx.ui.layout.FlexColumn
 import androidx.ui.material.*
 import com.numero.jetpack_compose_example.core.AppTheme
+import com.numero.jetpack_compose_example.core.VectorImageButton
 
 class BottomAppBarActivity : AppCompatActivity() {
 
@@ -38,11 +39,9 @@ class BottomAppBarActivity : AppCompatActivity() {
                 inflexible {
                     BottomAppBar(
                         navigationIcon = {
-                            AppBarIcon(
-                                imageFromResource(
-                                    resources,
-                                    R.drawable.ic_menu
-                                )
+                            VectorImageButton(
+                                id = R.drawable.ic_menu,
+                                tint = (+MaterialTheme.colors()).onPrimary
                             ) {
                                 // TODO click navigation
                             }
