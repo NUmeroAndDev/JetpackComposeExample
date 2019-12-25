@@ -1,4 +1,4 @@
-package com.numero.jetpack_compose_example.ui
+package com.numero.jetpack_compose_example.ui.components
 
 import androidx.compose.Composable
 import androidx.compose.unaryPlus
@@ -9,6 +9,8 @@ import com.numero.jetpack_compose_example.R
 import com.numero.jetpack_compose_example.core.AppBarLayout
 import com.numero.jetpack_compose_example.core.VectorImageButton
 import com.numero.jetpack_compose_example.model.Component
+import com.numero.jetpack_compose_example.ui.Screen
+import com.numero.jetpack_compose_example.ui.navigateTo
 
 @Composable
 fun ComponentDetailScreen(component: Component) {
@@ -30,8 +32,17 @@ fun ComponentDetailScreen(component: Component) {
             )
         },
         content = {
-            Text(text = "Hello world")
-            // TODO show component detail
+            when (component) {
+                Component.AlertDialog -> AlertDialogScreen()
+                Component.BottomAppBar -> BottomAppbarScreen()
+                Component.Button -> ButtonScreen()
+                Component.DataTable -> DataTableScreen()
+                Component.Drawer -> DrawerScreen()
+                Component.FloatingActionButton -> FloatingActionButtonScreen()
+                Component.ProgressIndicator -> ProgressIndicatorScreen()
+                Component.List -> ListScreen()
+                Component.Tab -> TabScreen()
+            }
         }
     )
 }
