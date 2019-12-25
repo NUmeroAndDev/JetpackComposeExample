@@ -14,11 +14,14 @@ import androidx.ui.foundation.VerticalScroller
 import androidx.ui.graphics.imageFromResource
 import androidx.ui.layout.Padding
 import androidx.ui.layout.Stack
-import androidx.ui.material.*
+import androidx.ui.material.FloatingActionButton
+import androidx.ui.material.MaterialTheme
+import androidx.ui.material.TopAppBar
 import androidx.ui.res.stringResource
 import androidx.ui.text.TextStyle
 import com.numero.jetpack_compose_example.core.AppBarLayout
 import com.numero.jetpack_compose_example.core.AppTheme
+import com.numero.jetpack_compose_example.core.VectorImageButton
 
 class FloatingActionButtonActivity : AppCompatActivity() {
 
@@ -39,7 +42,10 @@ class FloatingActionButtonActivity : AppCompatActivity() {
                             Text("FloatingActionButton")
                         },
                         navigationIcon = {
-                            AppBarIcon(imageFromResource(resources, R.drawable.ic_arrow_back)) {
+                            VectorImageButton(
+                                id = R.drawable.ic_arrow_back,
+                                tint = (+MaterialTheme.colors()).onPrimary
+                            ) {
                                 onBackPressed()
                             }
                         }

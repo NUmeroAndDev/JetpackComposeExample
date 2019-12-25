@@ -11,12 +11,15 @@ import androidx.ui.core.Text
 import androidx.ui.core.dp
 import androidx.ui.core.setContent
 import androidx.ui.foundation.VerticalScroller
-import androidx.ui.graphics.imageFromResource
 import androidx.ui.layout.Padding
-import androidx.ui.material.*
+import androidx.ui.material.MaterialTheme
+import androidx.ui.material.Tab
+import androidx.ui.material.TabRow
+import androidx.ui.material.TopAppBar
 import androidx.ui.text.TextStyle
 import com.numero.jetpack_compose_example.core.AppBarLayout
 import com.numero.jetpack_compose_example.core.AppTheme
+import com.numero.jetpack_compose_example.core.VectorImageButton
 
 class TabActivity : AppCompatActivity() {
 
@@ -39,7 +42,10 @@ class TabActivity : AppCompatActivity() {
                             Text("AlertDialog")
                         },
                         navigationIcon = {
-                            AppBarIcon(imageFromResource(resources, R.drawable.ic_arrow_back)) {
+                            VectorImageButton(
+                                id = R.drawable.ic_arrow_back,
+                                tint = (+MaterialTheme.colors()).onPrimary
+                            ) {
                                 onBackPressed()
                             }
                         }
