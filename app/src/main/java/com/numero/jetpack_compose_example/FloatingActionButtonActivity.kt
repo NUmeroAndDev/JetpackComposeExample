@@ -11,7 +11,6 @@ import androidx.ui.core.Text
 import androidx.ui.core.dp
 import androidx.ui.core.setContent
 import androidx.ui.foundation.VerticalScroller
-import androidx.ui.graphics.imageFromResource
 import androidx.ui.layout.Padding
 import androidx.ui.layout.Stack
 import androidx.ui.material.FloatingActionButton
@@ -21,6 +20,7 @@ import androidx.ui.res.stringResource
 import androidx.ui.text.TextStyle
 import com.numero.jetpack_compose_example.core.AppBarLayout
 import com.numero.jetpack_compose_example.core.AppTheme
+import com.numero.jetpack_compose_example.core.VectorImage
 import com.numero.jetpack_compose_example.core.VectorImageButton
 
 class FloatingActionButtonActivity : AppCompatActivity() {
@@ -77,12 +77,16 @@ class FloatingActionButtonActivity : AppCompatActivity() {
             aligned(alignment = Alignment.BottomRight) {
                 Padding(16.dp) {
                     FloatingActionButton(
-                        icon = imageFromResource(resources, R.drawable.ic_add),
                         color = (+MaterialTheme.colors()).secondary,
                         onClick = {
                             // TODO click action
                         }
-                    )
+                    ) {
+                        VectorImage(
+                            id = R.drawable.ic_add,
+                            tint = (+MaterialTheme.colors()).onSecondary
+                        )
+                    }
                 }
             }
         }
