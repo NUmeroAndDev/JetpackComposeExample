@@ -9,7 +9,7 @@ class ComponentListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ComponentScreen()
+            HomeScreen()
         }
     }
 }
