@@ -39,7 +39,7 @@ fun ComponentDetailScreen(component: Component) {
                 Component.DataTable -> DataTableScreen()
                 Component.Drawer -> DrawerScreen()
                 Component.FloatingActionButton -> FloatingActionButtonScreen()
-                Component.ProgressIndicator -> TODO()
+                Component.ProgressIndicator -> ProgressIndicatorScreen()
                 Component.List -> TODO()
                 Component.Tab -> TODO()
             }
