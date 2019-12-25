@@ -16,16 +16,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AlertDialogActivity" />
-        <activity android:name=".BottomAppBarActivity" />
-        <activity android:name=".ButtonActivity" />
-        <activity android:name=".DataTableActivity" />
-        <activity android:name=".DrawerActivity" />
-        <activity android:name=".FloatingActionButtonActivity" />
-        <activity android:name=".ProgressIndicatorActivity" />
-        <activity android:name=".ListItemActivity" />
-        <activity android:name=".ListActivity" />
-        <activity android:name=".TabActivity" />
     </application>
 
 </manifest>
