@@ -26,16 +26,23 @@ fun ComponentDetailScreen(component: Component) {
                         tint = (+MaterialTheme.colors()).onPrimary
                     ) {
                         // TODO implement back press
-                        navigateTo(
-                            Screen.Home
-                        )
+                        navigateTo(Screen.Home)
                     }
                 }
             )
         },
         content = {
-            Text(text = "Hello world")
-            // TODO show component detail
+            when (component) {
+                Component.AlertDialog -> AlertDialogScreen()
+                Component.BottomAppBar -> TODO()
+                Component.Button -> TODO()
+                Component.DataTable -> TODO()
+                Component.Drawer -> TODO()
+                Component.FloatingActionButton -> TODO()
+                Component.ProgressIndicator -> TODO()
+                Component.List -> TODO()
+                Component.Tab -> TODO()
+            }
         }
     )
 }
