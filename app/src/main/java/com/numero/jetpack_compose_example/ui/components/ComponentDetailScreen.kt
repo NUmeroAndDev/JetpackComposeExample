@@ -41,7 +41,7 @@ fun ComponentDetailScreen(component: Component) {
                 Component.FloatingActionButton -> FloatingActionButtonScreen()
                 Component.ProgressIndicator -> ProgressIndicatorScreen()
                 Component.List -> ListScreen()
-                Component.Tab -> TODO()
+                Component.Tab -> TabScreen()
             }
         }
     )
