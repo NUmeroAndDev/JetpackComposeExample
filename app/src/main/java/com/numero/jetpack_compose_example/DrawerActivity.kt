@@ -6,12 +6,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.*
 import androidx.ui.core.Text
 import androidx.ui.core.setContent
-import androidx.ui.graphics.imageFromResource
 import androidx.ui.layout.Center
 import androidx.ui.layout.Column
 import androidx.ui.material.*
 import com.numero.jetpack_compose_example.core.AppBarLayout
 import com.numero.jetpack_compose_example.core.AppTheme
+import com.numero.jetpack_compose_example.core.VectorImageButton
 
 class DrawerActivity : AppCompatActivity() {
 
@@ -57,7 +57,10 @@ class DrawerActivity : AppCompatActivity() {
                         Text("Drawer")
                     },
                     navigationIcon = {
-                        AppBarIcon(imageFromResource(resources, R.drawable.ic_arrow_back)) {
+                        VectorImageButton(
+                            id = R.drawable.ic_arrow_back,
+                            tint = (+MaterialTheme.colors()).onPrimary
+                        ) {
                             onBackPressed()
                         }
                     }

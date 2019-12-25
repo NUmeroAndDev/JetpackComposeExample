@@ -5,16 +5,20 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.Composable
 import androidx.compose.Context
+import androidx.compose.unaryPlus
 import androidx.ui.core.Text
 import androidx.ui.core.dp
 import androidx.ui.core.setContent
 import androidx.ui.foundation.VerticalScroller
-import androidx.ui.graphics.imageFromResource
 import androidx.ui.layout.Column
 import androidx.ui.layout.HeightSpacer
-import androidx.ui.material.*
+import androidx.ui.material.CircularProgressIndicator
+import androidx.ui.material.LinearProgressIndicator
+import androidx.ui.material.MaterialTheme
+import androidx.ui.material.TopAppBar
 import com.numero.jetpack_compose_example.core.AppBarLayout
 import com.numero.jetpack_compose_example.core.AppTheme
+import com.numero.jetpack_compose_example.core.VectorImageButton
 
 class ProgressIndicatorActivity : AppCompatActivity() {
 
@@ -35,7 +39,10 @@ class ProgressIndicatorActivity : AppCompatActivity() {
                             Text("ProgressIndicator")
                         },
                         navigationIcon = {
-                            AppBarIcon(imageFromResource(resources, R.drawable.ic_arrow_back)) {
+                            VectorImageButton(
+                                id = R.drawable.ic_arrow_back,
+                                tint = (+MaterialTheme.colors()).onPrimary
+                            ) {
                                 onBackPressed()
                             }
                         }

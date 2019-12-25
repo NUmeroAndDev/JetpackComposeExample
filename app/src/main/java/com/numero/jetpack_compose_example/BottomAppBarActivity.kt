@@ -11,10 +11,13 @@ import androidx.ui.core.dp
 import androidx.ui.core.setContent
 import androidx.ui.foundation.VerticalScroller
 import androidx.ui.foundation.shape.corner.CutCornerShape
-import androidx.ui.graphics.imageFromResource
 import androidx.ui.layout.FlexColumn
-import androidx.ui.material.*
+import androidx.ui.material.BottomAppBar
+import androidx.ui.material.FloatingActionButton
+import androidx.ui.material.MaterialTheme
 import com.numero.jetpack_compose_example.core.AppTheme
+import com.numero.jetpack_compose_example.core.VectorImage
+import com.numero.jetpack_compose_example.core.VectorImageButton
 
 class BottomAppBarActivity : AppCompatActivity() {
 
@@ -38,11 +41,9 @@ class BottomAppBarActivity : AppCompatActivity() {
                 inflexible {
                     BottomAppBar(
                         navigationIcon = {
-                            AppBarIcon(
-                                imageFromResource(
-                                    resources,
-                                    R.drawable.ic_menu
-                                )
+                            VectorImageButton(
+                                id = R.drawable.ic_menu,
+                                tint = (+MaterialTheme.colors()).onPrimary
                             ) {
                                 // TODO click navigation
                             }
@@ -51,16 +52,17 @@ class BottomAppBarActivity : AppCompatActivity() {
                             cutoutShape = CutCornerShape(36.dp)
                         ) {
                             FloatingActionButton(
-                                icon = imageFromResource(
-                                    resources,
-                                    R.drawable.ic_add
-                                ),
                                 shape = CutCornerShape(28.dp),
                                 color = (+MaterialTheme.colors()).secondary,
                                 onClick = {
-
+                                    // TODO click fab
                                 }
-                            )
+                            ) {
+                                VectorImage(
+                                    id = R.drawable.ic_add,
+                                    tint = (+MaterialTheme.colors()).onSecondary
+                                )
+                            }
                         },
                         actionData = menu,
                         action = {
