@@ -4,14 +4,18 @@ import androidx.compose.Composable
 import androidx.compose.state
 import androidx.compose.unaryPlus
 import androidx.ui.core.Text
-import androidx.ui.foundation.VerticalScroller
 import androidx.ui.layout.Center
 import androidx.ui.layout.Column
 import androidx.ui.layout.Container
 import androidx.ui.material.MaterialTheme
 import androidx.ui.material.Tab
 import androidx.ui.material.TabRow
+import androidx.ui.material.TopAppBar
 import androidx.ui.text.TextStyle
+import com.numero.jetpack_compose_example.R
+import com.numero.jetpack_compose_example.core.VectorImageButton
+import com.numero.jetpack_compose_example.ui.Screen
+import com.numero.jetpack_compose_example.ui.navigateTo
 
 @Composable
 fun TabScreen() {
@@ -24,6 +28,20 @@ fun TabScreen() {
     var selectedTabItem by +state { tabItemList.first() }
 
     Column {
+        TopAppBar(
+                title = {
+                    Text("Tab")
+                },
+                navigationIcon = {
+                    VectorImageButton(
+                            id = R.drawable.ic_arrow_back,
+                            tint = (+MaterialTheme.colors()).onPrimary
+                    ) {
+                        // TODO implement back press
+                        navigateTo(Screen.Home)
+                    }
+                }
+        )
         TabRow(
             items = tabItemList,
             selectedIndex = tabItemList.indexOf(selectedTabItem)
