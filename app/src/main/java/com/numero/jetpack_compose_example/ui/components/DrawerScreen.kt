@@ -6,9 +6,10 @@ import androidx.compose.unaryPlus
 import androidx.ui.core.Text
 import androidx.ui.layout.Center
 import androidx.ui.layout.FlexColumn
-import androidx.ui.material.*
-import com.numero.jetpack_compose_example.R
-import com.numero.jetpack_compose_example.core.widget.VectorImageButton
+import androidx.ui.material.Button
+import androidx.ui.material.DrawerState
+import androidx.ui.material.ModalDrawerLayout
+import com.numero.jetpack_compose_example.core.widget.Toolbar
 import com.numero.jetpack_compose_example.ui.Screen
 import com.numero.jetpack_compose_example.ui.navigateTo
 
@@ -42,18 +43,12 @@ private fun DrawerContent() {
 private fun DrawerBodyContent(openDrawer: () -> Unit) {
     FlexColumn {
         inflexible {
-            TopAppBar(
-                    title = {
-                        Text("Drawer")
-                    },
-                    navigationIcon = {
-                        VectorImageButton(
-                                id = R.drawable.ic_arrow_back,
-                                tint = (+MaterialTheme.colors()).onPrimary
-                        ) {
-                            // TODO implement back press
-                            navigateTo(Screen.Home)
-                        }
+            Toolbar(
+                    title = "Drawer",
+                    isShowArrowBack = true,
+                    onBackPressed = {
+                        // TODO implement back press
+                        navigateTo(Screen.Home)
                     }
             )
         }

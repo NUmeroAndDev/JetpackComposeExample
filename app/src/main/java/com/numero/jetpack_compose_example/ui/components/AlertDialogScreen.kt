@@ -8,10 +8,7 @@ import androidx.ui.layout.Center
 import androidx.ui.layout.FlexColumn
 import androidx.ui.material.AlertDialog
 import androidx.ui.material.Button
-import androidx.ui.material.MaterialTheme
-import androidx.ui.material.TopAppBar
-import com.numero.jetpack_compose_example.R
-import com.numero.jetpack_compose_example.core.widget.VectorImageButton
+import com.numero.jetpack_compose_example.core.widget.Toolbar
 import com.numero.jetpack_compose_example.ui.Screen
 import com.numero.jetpack_compose_example.ui.navigateTo
 
@@ -19,18 +16,12 @@ import com.numero.jetpack_compose_example.ui.navigateTo
 fun AlertDialogScreen() {
     FlexColumn {
         inflexible {
-            TopAppBar(
-                    title = {
-                        Text("AlertDialog")
-                    },
-                    navigationIcon = {
-                        VectorImageButton(
-                                id = R.drawable.ic_arrow_back,
-                                tint = (+MaterialTheme.colors()).onPrimary
-                        ) {
-                            // TODO implement back press
-                            navigateTo(Screen.Home)
-                        }
+            Toolbar(
+                    title = "AlertDialog",
+                    isShowArrowBack = true,
+                    onBackPressed = {
+                        // TODO implement back press
+                        navigateTo(Screen.Home)
                     }
             )
         }

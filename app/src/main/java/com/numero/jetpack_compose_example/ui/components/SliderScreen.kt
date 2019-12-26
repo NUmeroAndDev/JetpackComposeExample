@@ -6,12 +6,9 @@ import androidx.compose.unaryPlus
 import androidx.ui.core.Text
 import androidx.ui.core.dp
 import androidx.ui.layout.*
-import androidx.ui.material.MaterialTheme
 import androidx.ui.material.Slider
 import androidx.ui.material.SliderPosition
-import androidx.ui.material.TopAppBar
-import com.numero.jetpack_compose_example.R
-import com.numero.jetpack_compose_example.core.widget.VectorImageButton
+import com.numero.jetpack_compose_example.core.widget.Toolbar
 import com.numero.jetpack_compose_example.ui.Screen
 import com.numero.jetpack_compose_example.ui.navigateTo
 
@@ -19,18 +16,12 @@ import com.numero.jetpack_compose_example.ui.navigateTo
 fun SliderScreen() {
     FlexColumn {
         inflexible {
-            TopAppBar(
-                    title = {
-                        Text("Slider")
-                    },
-                    navigationIcon = {
-                        VectorImageButton(
-                                id = R.drawable.ic_arrow_back,
-                                tint = (+MaterialTheme.colors()).onPrimary
-                        ) {
-                            // TODO implement back press
-                            navigateTo(Screen.Home)
-                        }
+            Toolbar(
+                    title = "Slider",
+                    isShowArrowBack = true,
+                    onBackPressed = {
+                        // TODO implement back press
+                        navigateTo(Screen.Home)
                     }
             )
         }
