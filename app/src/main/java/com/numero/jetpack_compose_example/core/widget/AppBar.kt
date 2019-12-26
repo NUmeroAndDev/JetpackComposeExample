@@ -1,4 +1,4 @@
-package com.numero.jetpack_compose_example.core
+package com.numero.jetpack_compose_example.core.widget
 
 import androidx.compose.Composable
 import androidx.ui.layout.FlexColumn

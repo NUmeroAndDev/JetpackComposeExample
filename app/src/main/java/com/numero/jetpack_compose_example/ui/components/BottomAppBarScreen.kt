@@ -13,8 +13,9 @@ import androidx.ui.material.*
 import androidx.ui.res.stringResource
 import androidx.ui.text.TextStyle
 import com.numero.jetpack_compose_example.R
-import com.numero.jetpack_compose_example.core.VectorImage
-import com.numero.jetpack_compose_example.core.VectorImageButton
+import com.numero.jetpack_compose_example.core.widget.Toolbar
+import com.numero.jetpack_compose_example.core.widget.VectorImage
+import com.numero.jetpack_compose_example.core.widget.VectorImageButton
 import com.numero.jetpack_compose_example.ui.Screen
 import com.numero.jetpack_compose_example.ui.navigateTo
 
@@ -44,18 +45,12 @@ fun BottomAppbarScreen() {
 private fun BottomAppbarBodyContent(openDrawer: () -> Unit) {
     val menu = listOf("Hoge", "Fuga")
     Column {
-        TopAppBar(
-                title = {
-                    Text("BottomAppBar")
-                },
-                navigationIcon = {
-                    VectorImageButton(
-                            id = R.drawable.ic_arrow_back,
-                            tint = (+MaterialTheme.colors()).onPrimary
-                    ) {
-                        // TODO implement back press
-                        navigateTo(Screen.Home)
-                    }
+        Toolbar(
+                title = "BottomAppBar",
+                isShowArrowBack = true,
+                onBackPressed = {
+                    // TODO implement back press
+                    navigateTo(Screen.Home)
                 }
         )
         VerticalScroller(modifier = Flexible(1f)) {
