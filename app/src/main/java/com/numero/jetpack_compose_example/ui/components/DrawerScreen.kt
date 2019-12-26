@@ -8,7 +8,7 @@ import androidx.ui.layout.Center
 import androidx.ui.layout.FlexColumn
 import androidx.ui.material.*
 import com.numero.jetpack_compose_example.R
-import com.numero.jetpack_compose_example.core.VectorImageButton
+import com.numero.jetpack_compose_example.core.widget.VectorImageButton
 import com.numero.jetpack_compose_example.ui.Screen
 import com.numero.jetpack_compose_example.ui.navigateTo
 

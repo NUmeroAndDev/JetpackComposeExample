@@ -11,7 +11,7 @@ import androidx.ui.layout.HeightSpacer
 import androidx.ui.layout.Padding
 import androidx.ui.material.*
 import com.numero.jetpack_compose_example.R
-import com.numero.jetpack_compose_example.core.VectorImageButton
+import com.numero.jetpack_compose_example.core.widget.VectorImageButton
 import com.numero.jetpack_compose_example.ui.Screen
 import com.numero.jetpack_compose_example.ui.navigateTo
 

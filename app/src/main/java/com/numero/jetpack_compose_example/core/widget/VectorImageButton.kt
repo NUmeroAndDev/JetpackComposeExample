@@ -1,4 +1,4 @@
-package com.numero.jetpack_compose_example.core
+package com.numero.jetpack_compose_example.core.widget
 
 import androidx.annotation.DrawableRes
 import androidx.compose.Composable
@@ -22,8 +22,8 @@ fun VectorImageButton(
     Ripple(bounded = false) {
         Clickable(onClick = onClick) {
             VectorImage(
-                id = id,
-                tint = tint
+                    id = id,
+                    tint = tint
             )
         }
     }
