@@ -3,10 +3,7 @@ package com.numero.jetpack_compose_example.ui.components
 import androidx.compose.Composable
 import androidx.ui.core.Text
 import androidx.ui.foundation.VerticalScroller
-import androidx.ui.layout.FlexColumn
-import androidx.ui.layout.LayoutGravity
-import androidx.ui.layout.Padding
-import androidx.ui.layout.Stack
+import androidx.ui.layout.*
 import androidx.ui.material.FloatingActionButton
 import androidx.ui.material.MaterialTheme
 import androidx.ui.res.stringResource
@@ -42,7 +39,7 @@ private fun FloatingActionButtonContent() {
     val longText = stringResource(R.string.large_text)
     val color = MaterialTheme.colors()
 
-    Stack {
+    Stack(modifier = LayoutWidth.Fill + LayoutHeight.Fill) {
         VerticalScroller(modifier = LayoutGravity.Stretch) {
             Padding(16.dp) {
                 Text(
@@ -53,17 +50,19 @@ private fun FloatingActionButtonContent() {
                 )
             }
         }
-        Padding(16.dp) {
-            FloatingActionButton(
-                    color = color.secondary,
-                    onClick = {
-                        // TODO click action
-                    }
-            ) {
-                VectorImage(
-                        id = R.drawable.ic_add,
-                        tint = color.onSecondary
-                )
+        Column(modifier = LayoutGravity.BottomRight) {
+            Padding(16.dp) {
+                FloatingActionButton(
+                        color = color.secondary,
+                        onClick = {
+                            // TODO click action
+                        }
+                ) {
+                    VectorImage(
+                            id = R.drawable.ic_add,
+                            tint = color.onSecondary
+                    )
+                }
             }
         }
     }
