@@ -2,7 +2,6 @@ package com.numero.jetpack_compose_example.ui.components
 
 import androidx.compose.Composable
 import androidx.compose.state
-import androidx.compose.unaryPlus
 import androidx.ui.core.Text
 import androidx.ui.layout.Center
 import androidx.ui.layout.FlexColumn
@@ -33,7 +32,7 @@ fun AlertDialogScreen() {
 
 @Composable
 private fun AlertDialogContent() {
-    var isShowProgress by +state { false }
+    var isShowProgress by state { false }
     Center {
         Button(
                 text = "Show Alert Dialog",

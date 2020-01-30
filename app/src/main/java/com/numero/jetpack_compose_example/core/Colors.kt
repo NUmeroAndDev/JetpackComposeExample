@@ -1,9 +1,10 @@
 package com.numero.jetpack_compose_example.core
 
 import androidx.ui.graphics.Color
-import androidx.ui.material.ColorPalette
+import androidx.ui.material.darkColorPalette
+import androidx.ui.material.lightColorPalette
 
-val lightThemeColor = ColorPalette(
+val lightThemeColor = lightColorPalette(
     primary = Color("#6200EE"),
     primaryVariant = Color("#3700B3"),
     secondary = Color("#03DAD6"),
@@ -18,11 +19,10 @@ val lightThemeColor = ColorPalette(
     onError = Color("#FFFFFF")
 )
 
-val darkThemeColor = ColorPalette(
+val darkThemeColor = darkColorPalette(
     primary = Color("#BB86FC"),
     primaryVariant = Color("#3700B3"),
     secondary = Color("#03DAD6"),
-    secondaryVariant = Color("#03DAD6"),
     background = Color("#121212"),
     surface = Color("#121212"),
     error = Color("#CF6679"),

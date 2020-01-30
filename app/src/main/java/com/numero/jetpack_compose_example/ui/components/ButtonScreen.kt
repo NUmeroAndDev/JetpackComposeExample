@@ -1,16 +1,13 @@
 package com.numero.jetpack_compose_example.ui.components
 
 import androidx.compose.Composable
-import androidx.ui.core.dp
 import androidx.ui.foundation.VerticalScroller
-import androidx.ui.layout.Column
-import androidx.ui.layout.FlexColumn
-import androidx.ui.layout.HeightSpacer
-import androidx.ui.layout.Padding
+import androidx.ui.layout.*
 import androidx.ui.material.Button
 import androidx.ui.material.ContainedButtonStyle
 import androidx.ui.material.OutlinedButtonStyle
 import androidx.ui.material.TextButtonStyle
+import androidx.ui.unit.dp
 import com.numero.jetpack_compose_example.core.widget.Toolbar
 import com.numero.jetpack_compose_example.ui.Screen
 import com.numero.jetpack_compose_example.ui.navigateTo
@@ -45,14 +42,14 @@ private fun ButtonContent() {
                         },
                         style = ContainedButtonStyle()
                 )
-                HeightSpacer(32.dp)
+                Spacer(modifier = LayoutHeight(32.dp) + LayoutWidth.Fill)
                 Button(
                         text = "OutlinedButton",
                         onClick = {
                         },
                         style = OutlinedButtonStyle()
                 )
-                HeightSpacer(32.dp)
+                Spacer(modifier = LayoutHeight(32.dp) + LayoutWidth.Fill)
                 Button(
                         text = "TextButton",
                         onClick = {

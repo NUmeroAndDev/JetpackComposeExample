@@ -11,7 +11,7 @@ import com.numero.jetpack_compose_example.ui.components.ComponentScreen
 @Composable
 fun HomeScreen() {
     AppTheme {
-        Surface(color = (+MaterialTheme.colors()).background) {
+        Surface(color = MaterialTheme.colors().background) {
             when (val screen = ScreenStatus.currentScreen) {
                 is Screen.Home -> ComponentScreen()
                 is Screen.ComponentDetail -> ComponentDetailScreen(
