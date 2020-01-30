@@ -1,13 +1,13 @@
 package com.numero.jetpack_compose_example.ui.components
 
 import androidx.compose.Composable
-import androidx.ui.core.dp
 import androidx.ui.foundation.VerticalScroller
 import androidx.ui.graphics.Color
 import androidx.ui.layout.Column
 import androidx.ui.layout.FlexColumn
 import androidx.ui.material.Divider
 import androidx.ui.material.ListItem
+import androidx.ui.unit.dp
 import com.numero.jetpack_compose_example.core.widget.Toolbar
 import com.numero.jetpack_compose_example.ui.Screen
 import com.numero.jetpack_compose_example.ui.navigateTo

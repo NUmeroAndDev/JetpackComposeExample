@@ -18,7 +18,7 @@ fun Toolbar(
         {
             VectorImageButton(
                     id = R.drawable.ic_arrow_back,
-                    tint = (+MaterialTheme.colors()).onPrimary
+                    tint = MaterialTheme.colors().onPrimary
             ) {
                 onBackPressed?.invoke()
             }

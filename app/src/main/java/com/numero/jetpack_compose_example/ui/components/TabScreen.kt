@@ -23,7 +23,7 @@ fun TabScreen() {
         TabItem.TAB3
     )
 
-    var selectedTabItem by +state { tabItemList.first() }
+    var selectedTabItem by state { tabItemList.first() }
 
     Column {
         Toolbar(
@@ -46,7 +46,7 @@ fun TabScreen() {
                 }
             )
         }
-        Container(modifier = Flexible(1f)) {
+        Container(modifier = LayoutFlexible(1f)) {
             selectedTabItem.contentScreen()
         }
     }
@@ -60,7 +60,7 @@ fun TabItem.contentScreen() {
                 Text(
                     text = label,
                     style = TextStyle(
-                        color = (+MaterialTheme.colors()).onBackground
+                        color = MaterialTheme.colors().onBackground
                     )
                 )
             }
@@ -70,7 +70,7 @@ fun TabItem.contentScreen() {
                 Text(
                     text = label,
                     style = TextStyle(
-                        color = (+MaterialTheme.colors()).onBackground
+                        color = MaterialTheme.colors().onBackground
                     )
                 )
             }
@@ -80,7 +80,7 @@ fun TabItem.contentScreen() {
                 Text(
                     text = label,
                     style = TextStyle(
-                        color = (+MaterialTheme.colors()).onBackground
+                        color = MaterialTheme.colors().onBackground
                     )
                 )
             }
