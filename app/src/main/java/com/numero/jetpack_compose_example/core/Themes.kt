@@ -10,7 +10,7 @@ import androidx.ui.material.surface.Surface
 fun AppTheme(
     children: @Composable() () -> Unit
 ) {
-    val isDarkTheme = true
+    val isDarkTheme = isSystemInDarkTheme()
     MaterialTheme(
         colors = if (isDarkTheme) darkThemeColor else lightThemeColor
     ) {
