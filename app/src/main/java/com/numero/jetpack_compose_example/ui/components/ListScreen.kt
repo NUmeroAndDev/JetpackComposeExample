@@ -4,9 +4,9 @@ import androidx.compose.Composable
 import androidx.ui.foundation.VerticalScroller
 import androidx.ui.graphics.Color
 import androidx.ui.layout.Column
-import androidx.ui.layout.FlexColumn
 import androidx.ui.material.Divider
 import androidx.ui.material.ListItem
+import androidx.ui.material.Scaffold
 import androidx.ui.unit.dp
 import com.numero.jetpack_compose_example.core.widget.Toolbar
 import com.numero.jetpack_compose_example.ui.Screen
@@ -14,21 +14,21 @@ import com.numero.jetpack_compose_example.ui.navigateTo
 
 @Composable
 fun ListScreen() {
-    FlexColumn {
-        inflexible {
-            Toolbar(
-                    title = "List",
-                    isShowArrowBack = true,
-                    onBackPressed = {
-                        // TODO implement back press
-                        navigateTo(Screen.Home)
-                    }
-            )
-        }
-        expanded(1.0f) {
-            ListContent()
-        }
-    }
+    Scaffold(
+            topAppBar = {
+                Toolbar(
+                        title = "List",
+                        isShowArrowBack = true,
+                        onBackPressed = {
+                            // TODO implement back press
+                            navigateTo(Screen.Home)
+                        }
+                )
+            },
+            bodyContent = {
+                ListContent()
+            }
+    )
 }
 
 @Composable

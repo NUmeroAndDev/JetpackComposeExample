@@ -4,10 +4,10 @@ import androidx.compose.Composable
 import androidx.ui.core.Text
 import androidx.ui.foundation.HorizontalScroller
 import androidx.ui.foundation.VerticalScroller
-import androidx.ui.layout.FlexColumn
 import androidx.ui.layout.Padding
 import androidx.ui.material.DataTable
 import androidx.ui.material.MaterialTheme
+import androidx.ui.material.Scaffold
 import androidx.ui.text.TextStyle
 import androidx.ui.unit.dp
 import com.numero.jetpack_compose_example.core.widget.Toolbar
@@ -16,21 +16,21 @@ import com.numero.jetpack_compose_example.ui.navigateTo
 
 @Composable
 fun DataTableScreen() {
-    FlexColumn {
-        inflexible {
-            Toolbar(
-                    title = "DataTable",
-                    isShowArrowBack = true,
-                    onBackPressed = {
-                        // TODO implement back press
-                        navigateTo(Screen.Home)
-                    }
-            )
-        }
-        expanded(1.0f) {
-            DataTableContent()
-        }
-    }
+    Scaffold(
+            topAppBar = {
+                Toolbar(
+                        title = "DataTable",
+                        isShowArrowBack = true,
+                        onBackPressed = {
+                            // TODO implement back press
+                            navigateTo(Screen.Home)
+                        }
+                )
+            },
+            bodyContent = {
+                DataTableContent()
+            }
+    )
 }
 
 @Composable
