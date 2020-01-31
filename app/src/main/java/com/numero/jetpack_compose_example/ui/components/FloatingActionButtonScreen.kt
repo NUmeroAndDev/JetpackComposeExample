@@ -6,6 +6,7 @@ import androidx.ui.foundation.VerticalScroller
 import androidx.ui.layout.*
 import androidx.ui.material.FloatingActionButton
 import androidx.ui.material.MaterialTheme
+import androidx.ui.material.Scaffold
 import androidx.ui.res.stringResource
 import androidx.ui.text.TextStyle
 import androidx.ui.unit.dp
@@ -17,21 +18,21 @@ import com.numero.jetpack_compose_example.ui.navigateTo
 
 @Composable
 fun FloatingActionButtonScreen() {
-    FlexColumn {
-        inflexible {
-            Toolbar(
-                    title = "FloatingActionButton",
-                    isShowArrowBack = true,
-                    onBackPressed = {
-                        // TODO implement back press
-                        navigateTo(Screen.Home)
-                    }
-            )
-        }
-        expanded(1.0f) {
-            FloatingActionButtonContent()
-        }
-    }
+    Scaffold(
+            topAppBar = {
+                Toolbar(
+                        title = "FloatingActionButton",
+                        isShowArrowBack = true,
+                        onBackPressed = {
+                            // TODO implement back press
+                            navigateTo(Screen.Home)
+                        }
+                )
+            },
+            bodyContent = {
+                FloatingActionButtonContent()
+            }
+    )
 }
 
 @Composable

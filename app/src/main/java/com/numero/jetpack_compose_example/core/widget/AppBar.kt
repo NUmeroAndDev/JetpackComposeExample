@@ -1,15 +1,19 @@
 package com.numero.jetpack_compose_example.core.widget
 
 import androidx.compose.Composable
-import androidx.ui.layout.FlexColumn
+import androidx.ui.material.Scaffold
 
 @Composable
 fun AppBarLayout(
-    appBar: @Composable() () -> Unit,
-    content: @Composable() () -> Unit
+        appBar: @Composable() () -> Unit,
+        content: @Composable() () -> Unit
 ) {
-    FlexColumn {
-        inflexible { appBar() }
-        expanded(1.0f) { content() }
-    }
+    Scaffold(
+            topAppBar = {
+                appBar()
+            },
+            bodyContent = {
+                content()
+            }
+    )
 }
